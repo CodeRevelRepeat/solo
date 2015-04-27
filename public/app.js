@@ -1,25 +1,30 @@
 var treeData = [
   {
-    "name": "Top Level",
+    "name": "Click Me",
     "parent": "null",
     "_children": [
       {
-        "name": "Level 2: A",
-        "parent": "Top Level",
+        "name": "You want to retain all rights",
+        "parent": "Click Me",
         "_children": [
           {
             "name": "Son of A",
-            "parent": "Level 2: A"
+            "parent": "You want to retain all rights"
           },
           {
             "name": "Daughter of A",
-            "parent": "Level 2: A"
+            "parent": "You want to retain all rights"
           }
         ]
       },
       {
-        "name": "Level 2: B",
-        "parent": "Top Level"
+        "name": "You want to retain some rights",
+        "parent": "Click Me"
+      },
+
+      {
+        "name": "You want to give up all rights",
+        "parent": "Click Me"
       }
     ]
   }
@@ -29,7 +34,7 @@ var treeData = [
 // ************** Generate the tree diagram  *****************
 var margin = {top: 40, right: 120, bottom: 20, left: 120},
   width = 960 - margin.right - margin.left,
-  height = 500 - margin.top - margin.bottom;
+  height = 600 - margin.top - margin.bottom;
   
 var i = 0,
   duration = 750,
@@ -79,7 +84,8 @@ function update(source) {
     .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
   nodeEnter.append("text")
-    .attr("y", function(d) { return d.children || d._children ? -18 : 18; })
+    // .attr("y", function(d) { return d.children || d._children ? -18 : 18; })
+    .attr("y", -18)
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
     .text(function(d) { return d.name; })
