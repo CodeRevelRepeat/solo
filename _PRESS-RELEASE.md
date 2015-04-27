@@ -1,4 +1,4 @@
-# Project Name #
+# Software License Selector #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -15,30 +15,30 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
- 
+<!--  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Name the product in a way the reader (i.e. your target customers) will understand. -->
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Easily Choose a Software License ##
+  > SLS gives software developers the ability to quickly and painlessly select the software license that best fits their needs.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Software License Selector takes the pain out of choosing a software license.  SLS is a decision tree to assist software developers in choosing a software license for a project.  In less than one minute, a developer can follow the prompts and arrive at an informed software license decision.  
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Choosing a software license is boring and confusing.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > In under a minute, a software developer can follow SLS's decision tree to select the most appropriate license for any project and click on a link to the text of the selected license.  
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+## Quote from SLS ##
+  > "At SLS we wanted to make selecting a software licnese as easy as ordering an Uber so developers can get on to the real work of developing amazing software." 
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Just click on the first node in the decision tree and follow your path to software license bliss.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Before SLS, I would either waste time researching liences or try to ignore the whole issue.  With SLS I can quickly and easily make an informed choice about which software license to use on any project."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > You put your blood, sweat and tears into your projects.  Don't let that effort go to waste by ignoring licensing.
