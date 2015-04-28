@@ -16,7 +16,7 @@ var treeData = [
           //Level 3
 
             {
-              "name": "Comply with applicable restrictions in code used.  For example, if you incorporated code with a license that requires that all derivative works use the same license, use that license.",
+              "name": "Comply with applicable restrictions in license of code used.  For example, if you incorporated code with a license that requires that all derivative works use a certain license, use that license.",
               "parent": "Your work includes licensed code that restricts sub-licensing",
               "bottom": true
             },
@@ -159,46 +159,83 @@ var treeData = [
                 //Level 5
 
                 {
-                  "name": "You want to make sure your name is not used to promote subsequent works using your code.",
+                  "name": "You want to grant patent rights",
                   "parent": "You are ok with your code being used in proprietary projects",
                   "bottom": false,
                   "_children": [
 
                     //Level 6
 
-                      {
-                        "name": "BSD 3-Clause License",
-                        "parent": "You want to make sure your name is not used to promote subsequent works using your code.",
-                        "bottom": true,
-                        "url": "http://opensource.org/licenses/BSD-3-Clause"
-                      }
+                    {
+                      "name": "Apache License, Version 2.0",
+                      "parent": "You want to grant patent rights",
+                      "bottom": true,
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
 
-                  ]
+                    }
 
-                },
+
+                  ]  //close bracket for grant patent rights children
+
+
+                },  //close bracket for grant patent rights object
+
 
                 //Level 5
 
                 {
-                  "name": "You prefer to keep it short.",
+                  "name": "You do not want to grant patent rights or patent rights are not applicable",
                   "parent": "You are ok with your code being used in proprietary projects",
                   "bottom": false,
                   "_children": [
 
+
                     //Level 6
 
-                      {
-                        "name": "MIT License",
-                        "parent": "You are ok with your code being used in proprietary projects",
-                        "bottom": true,
-                        "url": "http://opensource.org/licenses/MIT"
-                      }
+                    {
+                      "name": "You want to make sure your name is not used to promote subsequent works using your code.",
+                      "parent": "You do not want to grant patent rights or patent rights are not applicable",
+                      "bottom": false,
+                      "_children": [
+
+                        //Level 7
+
+                          {
+                            "name": "BSD 3-Clause License",
+                            "parent": "You want to make sure your name is not used to promote subsequent works using your code.",
+                            "bottom": true,
+                            "url": "http://opensource.org/licenses/BSD-3-Clause"
+                          }
+
+                      ]
+
+                    },
+
+                    //Level 6
+
+                    {
+                      "name": "You prefer to keep it short.",
+                      "parent": "You are ok with your code being used in proprietary projects",
+                      "bottom": false,
+                      "_children": [
+
+                        //Level 7
+
+                          {
+                            "name": "MIT License",
+                            "parent": "You are ok with your code being used in proprietary projects",
+                            "bottom": true,
+                            "url": "http://opensource.org/licenses/MIT"
+                          }
 
 
-                  ]  //close bracket for keep it short children
+                      ]  //close bracket for keep it short children
 
-                },  //close bracket for keept it short object
+                    },  //close bracket for keept it short object
 
+
+                  ]  //close bracket for patent rights NA children
+                }, //close bracket for patent rights NA object
 
 
             ] //close bracket for no copyleft (ok with proprietary projects) children
