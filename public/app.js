@@ -47,9 +47,22 @@ function update(source) {
     .attr("transform", function(d) { return "translate(" + source.x0 + "," + source.y0 + ")"; })
     .on("click", click);
 
+   
+  if(node[0][0].__data__.icon){
+    nodeEnter.append("image")
+    .attr("xlink:href", function(d) { return d.icon; })
+    .attr("x", "-28px")
+    .attr("y", "-28px")
+    .attr("width", "60px")
+    .attr("height", "60px");
+
+  }  else {
+
   nodeEnter.append("circle")
     .attr("r", 1e-6)
     .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  }
 
 
   function wrap(text, width) {
@@ -81,11 +94,31 @@ function update(source) {
     .attr("y", function(d) { 
       if(d.bottom){
         return 40;
-      } else {
+      } 
+      else if(d.lift){
+        return -75;
+      }
+      else if(d.liftless){
+        return -55;
+      }
+      else if(d.liftleast){
+        return -25;
+      }
+      else {
         return -44;
       }
     })
-    .attr("text-anchor", "middle")
+    .attr("text-anchor", function(d) { 
+      if(d.left){
+        return "end";
+      }
+      else if(d.right){
+        return "start";
+      }
+      else {
+        return "middle";
+      }
+    })
     .text(function(d) { return d.name; })
     .style("fill-opacity", 1e-6)
     .style("font", function(d){ 

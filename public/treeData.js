@@ -3,6 +3,7 @@ var treeData = [
     "name": "Let's Get Started",
     "parent": "null",
     "bottom": false,
+    "icon": "copyrightsymbol.jpg",
     "_children": [
 
     //Level 2
@@ -48,13 +49,15 @@ var treeData = [
               {
                 "name": "You want to sell the software",
                 "parent": "You want to retain all rights", 
+                "left": true,
+                "liftleast": true,
                 "bottom": false,
                 "_children": [
 
                 //Level 5
                     {
                       "name": "You need an End User License Agreement.  There are no standard forms.  Depending on the scale of your project and needs, either engage a lawyer or use an online legal service to prepare an End User License Agreement.",
-                      "parent": "You want to sell the software.",
+                      "parent": "You want to sell the software",
                       "bottom": true,
                       
                     },
@@ -67,6 +70,7 @@ var treeData = [
           {
             "name": "You are not selling or distributing",
             "parent": "You want to retain all rights",
+            "liftleast": true,
             "bottom": false,
             "_children": [
 
@@ -95,22 +99,25 @@ var treeData = [
           {
             "name": "You want to limit the use of your code in proprietary projects",
             "parent": "You want to retain some rights",
+            "left": true,
             "bottom": false,
             "_children": [
 
               //Level 5
 
                 {
-                  "name": "If your code is integrated into a project, you want that whole project and subsequent projects to remain open source and under the same license terms.",
+                  "name": "If your code is integrated into a project, you want that whole project and subsequent projects to remain open source under the same license.",
                   "parent": "You want to limit the use of your code in proprietary projects",
                   "bottom": false,
+                  "left": true,
+                  "lift": true,
                   "_children": [
 
                     //Level 6
 
                     {
                       "name": "GNU General Public License, version 2 (GPL)",
-                      "parent": "If your code is integrated into a project, you want that whole project and subsequent projects to remain open source under the same license terms.",
+                      "parent": "If your code is integrated into a project, you want that whole project and subsequent projects to remain open source under the same license.",
                       "bottom": true,
                       "url": "https://www.gnu.org/licenses/gpl-2.0.html"
                     }
@@ -126,6 +133,8 @@ var treeData = [
                 "name": "You are ok with your code being used in a larger work with a proprietary license so long as your code files retain an open source license.",
                 "parent": "You want to limit the use of your code in proprietary projects",
                 "bottom": false,
+                "right": true,
+                "lift": true,
                 "_children": [
 
                     //Level 6
@@ -162,6 +171,8 @@ var treeData = [
                   "name": "You want to grant patent rights",
                   "parent": "You are ok with your code being used in proprietary projects",
                   "bottom": false,
+                  "left": true,
+                  "liftleast": true,
                   "_children": [
 
                     //Level 6
@@ -193,16 +204,18 @@ var treeData = [
                     //Level 6
 
                     {
-                      "name": "You want to make sure your name is not used to promote subsequent works using your code.",
+                      "name": "You want to make sure your name is not used to promote subsequent works using your code",
                       "parent": "You do not want to grant patent rights or patent rights are not applicable",
                       "bottom": false,
+                      "left": true,
+                      "liftless": true,
                       "_children": [
 
                         //Level 7
 
                           {
                             "name": "BSD 3-Clause License",
-                            "parent": "You want to make sure your name is not used to promote subsequent works using your code.",
+                            "parent": "You want to make sure your name is not used to promote works that use your code",
                             "bottom": true,
                             "url": "http://opensource.org/licenses/BSD-3-Clause"
                           }
@@ -214,9 +227,10 @@ var treeData = [
                     //Level 6
 
                     {
-                      "name": "You prefer to keep it short.",
+                      "name": "You prefer to keep it short",
                       "parent": "You are ok with your code being used in proprietary projects",
                       "bottom": false,
+                      "liftleast": true,
                       "_children": [
 
                         //Level 7
