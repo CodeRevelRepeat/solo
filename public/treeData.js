@@ -56,8 +56,90 @@ var treeData = [
       {
         "name": "You want to retain some rights.",
         "parent": "Start Here",
-        "bottom": false
+        "bottom": false,
+        "_children": [
+
+          //Level 3
+
+          {
+            "name": "You want copyleft protection.",
+            "parent": "You want to retain some rights.",
+            "bottom": false,
+            "_children": [
+
+              //Level 4
+
+                {
+                  "name": "If your code is included in a project, you want that whole project to remain open source.",
+                  "parent": "You want copyleft protection.",
+                  "bottom": false,
+                  "_children": [
+
+                    //Level 5
+
+                    {
+                      "name": "GNU General Public License, version 2 (GPL)",
+                      "parent": "If your code is included in a project, you want that whole project to remain open source.",
+                      "bottom": true,
+                      "url": "https://www.gnu.org/licenses/gpl-2.0.html"
+                    }
+
+                  ]
+
+                },
+
+              //Level 4
+
+
+              {
+                "name": "You are ok with your code being used in proprietary projects.",
+                "parent": "You want copyleft protection.",
+                "bottom": false,
+                "_children": [
+
+              //Level 5
+
+              {
+                  "name": "Mozilla Public License 2.0",
+                  "parent": "You are ok with your code being used in proprietary projects.",
+                  "bottom": true,
+                  "url": "https://www.mozilla.org/MPL/2.0/"
+
+              }
+
+            ]
+
+          },
+
+
+
+
+
+            ]
+
+          },
+
+
+
+
+
+
+
+        ]
       },
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       //Level 2
 
