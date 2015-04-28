@@ -82,7 +82,7 @@ function update(source) {
       if(d.bottom){
         return 40;
       } else {
-        return -40;
+        return -44;
       }
     })
     .attr("text-anchor", "middle")
@@ -108,7 +108,7 @@ function update(source) {
       window.open(d.url); 
       }
     })
-    .call(wrap, 200);
+    .call(wrap, 300);
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
