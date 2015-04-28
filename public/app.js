@@ -108,7 +108,7 @@ function update(source) {
       window.open(d.url); 
       }
     })
-    .call(wrap, 300);
+    .call(wrap, 280);
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()

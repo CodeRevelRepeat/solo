@@ -93,16 +93,16 @@ var treeData = [
           //Level 4
 
           {
-            "name": "You want copyleft protection.",
-            "parent": "Retain some rights",
+            "name": "You want to limit the use of your code in proprietary projects",
+            "parent": "You want to retain some rights",
             "bottom": false,
             "_children": [
 
               //Level 5
 
                 {
-                  "name": "If your code is included in a project, you want that whole project to remain open source.",
-                  "parent": "You want copyleft protection.",
+                  "name": "If your code is integrated into a project, you want that whole project and subsequent projects to remain open source and under the same license terms.",
+                  "parent": "You want to limit the use of your code in proprietary projects",
                   "bottom": false,
                   "_children": [
 
@@ -110,7 +110,7 @@ var treeData = [
 
                     {
                       "name": "GNU General Public License, version 2 (GPL)",
-                      "parent": "If your code is included in a project, you want that whole project to remain open source.",
+                      "parent": "If your code is integrated into a project, you want that whole project and subsequent projects to remain open source under the same license terms.",
                       "bottom": true,
                       "url": "https://www.gnu.org/licenses/gpl-2.0.html"
                     }
@@ -123,8 +123,8 @@ var treeData = [
 
 
               {
-                "name": "You are ok with your code being used in proprietary projects.",
-                "parent": "You want copyleft protection.",
+                "name": "You are ok with your code being used in a larger work with a proprietary license so long as your code files retain an open source license.",
+                "parent": "You want to limit the use of your code in proprietary projects",
                 "bottom": false,
                 "_children": [
 
@@ -132,36 +132,83 @@ var treeData = [
 
                     {
                         "name": "Mozilla Public License 2.0",
-                        "parent": "You are ok with your code being used in proprietary projects.",
+                        "parent": "You are ok with your code being used in a larger work with a proprietary license so long as your code files retain an open source license.",
                         "bottom": true,
                         "url": "https://www.mozilla.org/MPL/2.0/"
 
                     }
 
-            ]
+              ]  //close bracket for copyleft compromise children
 
-          },
+            },  //close bracket for copyleft compromise object
 
+          ]  //close bracket for copyleft children
 
-
-
-
-            ]
-
-          },
+        },  //close bracket for copyleft object
 
 
+          //Level 4
+
+          {
+
+            "name": "You are ok with your code being used in proprietary projects",
+            "parent": "You want to retain some rights",
+            "bottom": false,
+            "_children": [
+
+                //Level 5
+
+                {
+                  "name": "You want to make sure your name is not used to promote subsequent works using your code.",
+                  "parent": "You are ok with your code being used in proprietary projects",
+                  "bottom": false,
+                  "_children": [
+
+                    //Level 6
+
+                      {
+                        "name": "BSD 3-Clause License",
+                        "parent": "You want to make sure your name is not used to promote subsequent works using your code.",
+                        "bottom": true,
+                        "url": "http://opensource.org/licenses/BSD-3-Clause"
+                      }
+
+                  ]
+
+                },
+
+                //Level 5
+
+                {
+                  "name": "You prefer to keep it short.",
+                  "parent": "You are ok with your code being used in proprietary projects",
+                  "bottom": false,
+                  "_children": [
+
+                    //Level 6
+
+                      {
+                        "name": "MIT License",
+                        "parent": "You are ok with your code being used in proprietary projects",
+                        "bottom": true,
+                        "url": "http://opensource.org/licenses/MIT"
+                      }
+
+
+                  ]  //close bracket for keep it short children
+
+                },  //close bracket for keept it short object
 
 
 
+            ] //close bracket for no copyleft (ok with proprietary projects) children
 
 
+          },  //close bracket for no copyleft object
 
 
-
-
-        ]
-      },
+        ]  //close bracket for retain some rights children
+      },  //close bracket for retain some rights object
 
 
 
