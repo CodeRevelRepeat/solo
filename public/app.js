@@ -2,29 +2,67 @@ var treeData = [
   {
     "name": "Click Me",
     "parent": "null",
+    "bottom": false,
     "_children": [
+
+    //Level 2
       {
         "name": "You want to retain all rights",
         "parent": "Click Me",
+        "bottom": false,
         "_children": [
+
+        //Level 3
           {
-            "name": "Son of A",
-            "parent": "You want to retain all rights"
+            "name": "You want to sell the software",
+            "parent": "You want to retain all rights", 
+            "bottom": false,
+            "_children": [
+
+            //Level 4
+                {
+                  "name": "Engage a lawyer or use online legal service to prepare an end user license agreement",
+                  "parent": "You want to sell the software",
+                  "bottom": true
+                },
+
+            ]
           },
+
+
+          //Level 3
           {
-            "name": "Daughter of A",
-            "parent": "You want to retain all rights"
+            "name": "You are not selling or distributing",
+            "parent": "You want to retain all rights",
+            "bottom": false,
+            "_children": [
+
+            //Level 4
+
+                {
+                  "name": "No license needed.  You will have default copyright protection. Be aware of any terms of service you opt into if you post your code on github.",
+                  "parent": "You are not selling or distributing",
+                  "bottom": true
+                }
+
+            ]
           }
         ]
       },
+
+      //Level 2 
       {
         "name": "You want to retain some rights",
-        "parent": "Click Me"
+        "parent": "Click Me",
+        "bottom": false
       },
+
+      //Level 2
 
       {
         "name": "You want to give up all rights",
-        "parent": "Click Me"
+        "parent": "Click Me",
+        "bottom": false
       }
     ]
   }
@@ -34,7 +72,7 @@ var treeData = [
 // ************** Generate the tree diagram  *****************
 var margin = {top: 40, right: 120, bottom: 20, left: 120},
   width = 960 - margin.right - margin.left,
-  height = 600 - margin.top - margin.bottom;
+  height = 900 - margin.top - margin.bottom;
   
 var i = 0,
   duration = 750,
@@ -89,7 +127,12 @@ function update(source) {
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
     .text(function(d) { return d.name; })
-    .style("fill-opacity", 1e-6);
+    .style("fill-opacity", 1e-6)
+    .style("font", function(d){ 
+        if(d.bottom){
+          return "15px sans-serif";
+        }
+    });
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
@@ -98,10 +141,32 @@ function update(source) {
 
   nodeUpdate.select("circle")
     .attr("r", 10)
-    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+    .style("fill", function(d) { 
+      if(d.bottom){
+        return "red";
+      }
+      else if(d._children){
+        return "green";
+      }
+      else {
+        return "#fff"
+      }
+
+    });
 
   nodeUpdate.select("text")
-    .style("fill-opacity", 1);
+    .style("fill-opacity", function(d) { 
+      if(d.bottom){
+        return 1;
+      }
+      else if(d._children){
+        return 1;
+      }
+      else {
+        return 0.15;
+      }
+      
+    });
 
   // Transition exiting nodes to the parent's new position.
   var nodeExit = node.exit().transition()
