@@ -23,7 +23,8 @@ var treeData = [
                 {
                   "name": "Engage a lawyer or use online legal service to prepare an end user license agreement",
                   "parent": "You want to sell the software",
-                  "bottom": true
+                  "bottom": true,
+                  "sibling": "No license needed.  You will have default copyright protection. Be aware of any terms of service you opt into if you post your code on github."
                 },
 
             ]
@@ -42,7 +43,8 @@ var treeData = [
                 {
                   "name": "No license needed.  You will have default copyright protection. Be aware of any terms of service you opt into if you post your code on github.",
                   "parent": "You are not selling or distributing",
-                  "bottom": true
+                  "bottom": true,
+                  "sibling": "Engage a lawyer or use online legal service to prepare an end user license agreement"
                 }
 
             ]
@@ -121,10 +123,42 @@ function update(source) {
     .attr("r", 1e-6)
     .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
+
+  function wrap(text, width) {
+    text.each(function() {
+      var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1, // ems
+          y = text.attr("y"),
+          dy = 0.35,
+          tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+      while (word = words.pop()) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+        }
+      }
+    });
+  };
+
+
   nodeEnter.append("text")
-    // .attr("y", function(d) { return d.children || d._children ? -18 : 18; })
-    .attr("y", -18)
-    .attr("dy", ".35em")
+    .attr("y", function(d) { 
+      if(d.bottom){
+        return 40;
+      } else {
+        return -32;
+      }
+    })
+    // .attr("y", -32)
+    // .attr("dy", ".35em")
     .attr("text-anchor", "middle")
     .text(function(d) { return d.name; })
     .style("fill-opacity", 1e-6)
@@ -132,7 +166,8 @@ function update(source) {
         if(d.bottom){
           return "15px sans-serif";
         }
-    });
+    })
+    .call(wrap, 220);
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
@@ -215,6 +250,11 @@ function update(source) {
 
 // Toggle children on click.
 function click(d) {
+  //Work to remove sibling on click
+  // if(d.sibling){
+  // console.log(d.sibling.node);
+  //   d.sibling.node.exit();
+  // }
   if (d.children) {
   d._children = d.children;
   d.children = null;
