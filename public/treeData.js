@@ -1,13 +1,13 @@
 var treeData = [
   {
-    "name": "Start Here",
+    "name": "Let's Get Started",
     "parent": "null",
     "bottom": false,
     "_children": [
 
     //Level 2
       {
-        "name": "You want to retain all rights.",
+        "name": "Retain all rights",
         "parent": "Start Here",
         "bottom": false,
         "_children": [
@@ -15,7 +15,7 @@ var treeData = [
         //Level 3
           {
             "name": "You want to sell the software.",
-            "parent": "You want to retain all rights.", 
+            "parent": "Retain all rights.", 
             "bottom": false,
             "_children": [
 
@@ -54,7 +54,7 @@ var treeData = [
 
       //Level 2 
       {
-        "name": "You want to retain some rights.",
+        "name": "Retain some rights",
         "parent": "Start Here",
         "bottom": false,
         "_children": [
@@ -63,7 +63,7 @@ var treeData = [
 
           {
             "name": "You want copyleft protection.",
-            "parent": "You want to retain some rights.",
+            "parent": "Retain some rights",
             "bottom": false,
             "_children": [
 
@@ -144,7 +144,7 @@ var treeData = [
       //Level 2
 
       {
-        "name": "You want to give up all rights.",
+        "name": "Give up all rights",
         "parent": "Start Here",
         "bottom": false,
         "_children": [
@@ -152,7 +152,7 @@ var treeData = [
           //Level 3
           {
             "name": "CC0",
-            "parent": "You want to give up all rights.",
+            "parent": "Give up all rights",
             "bottom": true,
             "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
 

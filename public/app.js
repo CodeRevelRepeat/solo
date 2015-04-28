@@ -1,6 +1,6 @@
 
 //Generate Tree Diagram
-var margin = {top: 40, right: 120, bottom: 20, left: 90},
+var margin = {top: 50, right: 120, bottom: 20, left: 80},
   width = 960 - margin.right - margin.left,
   height = 1000 - margin.top - margin.bottom;
   
@@ -14,7 +14,7 @@ var tree = d3.layout.tree()
 var diagonal = d3.svg.diagonal()
   .projection(function(d) { return [d.x, d.y]; });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".main").append("svg")
   .attr("width", width + margin.right + margin.left)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -82,7 +82,7 @@ function update(source) {
       if(d.bottom){
         return 40;
       } else {
-        return -32;
+        return -40;
       }
     })
     .attr("text-anchor", "middle")
@@ -116,13 +116,13 @@ function update(source) {
     .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
   nodeUpdate.select("circle")
-    .attr("r", 10)
+    .attr("r", 14)
     .style("fill", function(d) { 
       if(d.bottom){
-        return "red";
+        return "#CC1222";
       }
       else if(d._children){
-        return "green";
+        return "#006D2A";
       }
       else {
         return "#fff"
