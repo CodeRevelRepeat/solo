@@ -1,80 +1,8 @@
-var treeData = [
-  {
-    "name": "Click Me",
-    "parent": "null",
-    "bottom": false,
-    "_children": [
 
-    //Level 2
-      {
-        "name": "You want to retain all rights",
-        "parent": "Click Me",
-        "bottom": false,
-        "_children": [
-
-        //Level 3
-          {
-            "name": "You want to sell the software",
-            "parent": "You want to retain all rights", 
-            "bottom": false,
-            "_children": [
-
-            //Level 4
-                {
-                  "name": "Engage a lawyer or use online legal service to prepare an end user license agreement",
-                  "parent": "You want to sell the software",
-                  "bottom": true,
-                  "sibling": "No license needed.  You will have default copyright protection. Be aware of any terms of service you opt into if you post your code on github."
-                },
-
-            ]
-          },
-
-
-          //Level 3
-          {
-            "name": "You are not selling or distributing",
-            "parent": "You want to retain all rights",
-            "bottom": false,
-            "_children": [
-
-            //Level 4
-
-                {
-                  "name": "No license needed.  You will have default copyright protection. Be aware of any terms of service you opt into if you post your code on github.",
-                  "parent": "You are not selling or distributing",
-                  "bottom": true,
-                  "sibling": "Engage a lawyer or use online legal service to prepare an end user license agreement"
-                }
-
-            ]
-          }
-        ]
-      },
-
-      //Level 2 
-      {
-        "name": "You want to retain some rights",
-        "parent": "Click Me",
-        "bottom": false
-      },
-
-      //Level 2
-
-      {
-        "name": "You want to give up all rights",
-        "parent": "Click Me",
-        "bottom": false
-      }
-    ]
-  }
-];
-
-
-// ************** Generate the tree diagram  *****************
-var margin = {top: 40, right: 120, bottom: 20, left: 120},
+//Generate Tree Diagram
+var margin = {top: 40, right: 120, bottom: 20, left: 90},
   width = 960 - margin.right - margin.left,
-  height = 900 - margin.top - margin.bottom;
+  height = 1000 - margin.top - margin.bottom;
   
 var i = 0,
   duration = 750,
@@ -157,8 +85,6 @@ function update(source) {
         return -32;
       }
     })
-    // .attr("y", -32)
-    // .attr("dy", ".35em")
     .attr("text-anchor", "middle")
     .text(function(d) { return d.name; })
     .style("fill-opacity", 1e-6)
@@ -167,7 +93,22 @@ function update(source) {
           return "15px sans-serif";
         }
     })
-    .call(wrap, 220);
+    .style("text-decoration", function(d){ 
+        if(d.url){
+          return "underline";
+        }
+    })
+    // .style("color", function(d){ 
+    //     if(d.url){
+    //       return "blue";
+    //     }
+    // })
+    .on("click", function(d) { 
+      if(d.url){
+      window.open(d.url); 
+      }
+    })
+    .call(wrap, 200);
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()

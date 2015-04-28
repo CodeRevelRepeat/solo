@@ -2,6 +2,8 @@
 
 body {
   font-family: "Helvetica Neue", Helvetica;
+  /*To enable external links:*/
+  pointer-events: all;
 }
 
 
@@ -16,7 +18,8 @@ body {
   }
 
   .node text {
-    font: 12px sans-serif;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica;
   }
 
   .link {
